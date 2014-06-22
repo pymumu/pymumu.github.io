@@ -1,0 +1,21 @@
+name: Ruilin's blog
+url: http://pymumu.github.io
+site: pymumu.github.io
+author:
+  name: Ruilin Peng
+  email: pymumu@gmail.com
+
+permalink: post/:year-:month-:day/:title.html
+
+paginate: 10
+paginate_path: "/page:num"
+encoding: utf-8
+highlighter: pygments
+
+markdown: redcarpet
+markdown_ext:  md
+redcarpet:
+    extensions: [no_intra_emphasis,tables,autolink,disable_indented_code_blocks,fenced_code_blocks]
+
+exclude: ['README.md', '.*']
+

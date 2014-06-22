@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+  {% if page.title %}
+  <title>{{ page.title }}</title>
+  {% else %}
+  <title>{{ site.name }}</title>
+  {% endif %}
+  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/css/docs.css" rel="stylesheet">
+  <link href="/assets/css/blog.css" rel="stylesheet">
+  <link href="/assets/highlight/styles/github.css" rel="stylesheet">
+  <link href="/assets/css/github.min.css" rel="stylesheet">
+  <link href="/assets/jquery/css/image.css" rel="stylesheet">
+  <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/img/favicon.ico"> 
+  <!-- style -->
+  {% assign block = content | split: '<!-- style -->' %}
+  {{ block[1] }}
+  <!-- style -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    body{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;}
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+    pre code { background: transparent; }
+    @media (min-width: 768px) {
+        .bs-docs-home .bs-social, 
+        .bs-docs-home .bs-masthead-links {
+          margin-left: 0;
+        }
+    }
+    
+    .bs-docs-section p {
+      line-height: 2;
+    }
+    
+    .bs-docs-section p.lead {
+      line-height: 1.4;
+    }
+    </style>
+  </head>
+  <body>
+  <!-- navigation bar -->
+  <a class="sr-only" href="#content">Skip to main content</a>
+  {% include nav-bar.html %}
+  <!--end navigation bar -->
+  <!-- Docs page layout -->
+  <!-- bannercontent -->
+  <!--
+  <div class="bs-header bs-back-image" id="content">
+    <div class="container">
+	  {% assign block = content | split: '<!-- bannercontent -->' %}
+  	  {{ block[1] }}
+    </div>
+  </div>
+  -->
+  <!-- bannercontent -->
+  <!-- Callout for the old docs link -->
+  <!-- Begin page content -->
+  <div class="container bs-docs-container">
+  <!-- content -->
+  {% assign block = content | split: '<!-- content -->' %}
+  {{ block[1] }}
+  <!-- content -->
+  </div>
+  <!--foot-->
+  {% include footer.html %}
+  <!--end foot -->
+  {% include scripts.html %}
+  </body>
+</html>
+

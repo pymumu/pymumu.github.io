@@ -1,0 +1,11 @@
+#scrollUp{
+  bottom: 40px;  
+  right: 40px; 
+  height: 38px; 
+  width: 38px;
+  opacity: 0.5;
+  background: url(/assets/img/top.png) no-repeat;
+}
+#scrollUp:hover{
+  opacity: 1;
+}

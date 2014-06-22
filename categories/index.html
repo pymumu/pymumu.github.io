@@ -1,0 +1,21 @@
+---
+layout: cat
+title: categories
+---
+<!-- content -->
+<p></p>
+{% for cat in site.categories %} 
+<h1 id="{{ cat[0] }}">{{ cat[0] }}</h1>
+<ul>  
+    {% for cat_post in cat[1] %}
+        {% if cat_post.title != null %}
+            {% if page.url == cat_post.url %}
+            <li class="active"><a href="#" class="active">{{cat_post.title}}</a></li>
+            {% else %}
+            <li>{{ cat_post.date | date: "%B %e, %Y" }} &raquo; <a href="{{cat_post.url}}">{{cat_post.title}}</a></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endfor %}
+<!-- content -->

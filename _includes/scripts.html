@@ -1,0 +1,35 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/assets/jquery/jquery-1.11.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/highlight/highlight.pack.js"></script>
+<script >hljs.initHighlightingOnLoad();</script>
+<script src="/assets/js/application.js"></script>
+<script src="/assets/jquery/jquery.scrollUp.min.js"></script>
+<script src="/assets/js/blog.js"></script>
+<!-- script -->
+{% assign block = content | split: '<!-- script -->' %}
+{{ block[1] }}
+<!-- script -->
+<script>
+  //var navHeight = 50;
+  var footHeight = $('#footer').outerHeight(true);
+  $(function(){
+      {% if page.nav %}
+      $('.nav #{{page.nav}}').attr('class','active');
+      {% endif %}
+    $.scrollUp({
+         scrollName: 'scrollUp',topDistance: '100',topSpeed: 100,animation: 'fade',animationInSpeed: 500,
+           animationOutSpeed: 500,scrollText: '',activeOverlay: false,
+         });  
+      $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+      $('a.animate').click(function(){
+          if ($(this).attr('offset')) {
+              offset += parseInt($(this).attr('offset')); 
+          }
+          $body.animate({scrollTop: $($(this).attr('href')).offset().top}, 100);
+          return false;
+      });        
+  });
+</script>

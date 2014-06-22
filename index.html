@@ -1,6 +1,27 @@
-<html>
-<title>this is a test</title>
-<body>
-<a href="#" onclick="javascript:alert('yes')">hello world</a>
-</body>
-</html>
+---
+layout: blogs
+title: Ruilin's blog
+description:
+  Personal blog of Ruilin about programming, mostly in C,
+  Linux, Shell, java.
+---
+<!-- content -->
+{% for post in paginator.posts %}
+<div class="post">
+<h1 class="header"><a class="feature-link" href="{{post.url}}">{{ post.title }}</a></h1>
+<span class="text-warning time" style="padding-right:10px"> {{ post.date | date_to_string }}</span>
+</div>
+<div class="md">
+	{% if post.description %}
+	{{ post.description }}
+	{% else %}
+    {{ post.content | split:'<!--more-->' | first }}
+	{% endif %}</div>
+<a class="more btn btn-default" href="{{ post.url }}">Continue reading <span class="glyphicon glyphicon-chevron-right"></span></a>
+{% endfor %}
+<!-- content -->
+<!-- bannercontent -->
+<div>
+this is a test
+</div>
+<!-- bannercontent -->

@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<!-- content -->
+<div class="row">
+  <div class="col-md-8">
+    <div class="left">
+    {% assign block = content | split: '<!-- content -->' %}
+    {{ block[1] }}
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        {% assign pagination_column_nums = 3 %}
+        {% assign pagination_start_page = 1 %}
+        {% assign pagination_end_page = pagination_column_nums %}
+        {% if paginator.page > pagination_column_nums %}
+          {% assign pagination_start_page = paginator.page | minus: pagination_column_nums | plus:1 %}
+          {% assign pagination_end_page = paginator.page %}
+        {% elsif pagination_column_nums > paginator.total_pages %}
+          {% assign pagination_end_page = paginator.total_pages %}
+        {% endif %}
+    
+        <div class="text-center">
+          <ul class="pagination">
+            {% if pagination_start_page == 1 %}
+              <li class="disabled"><span>&laquo;</span></li> 
+            {% else %}
+              {% assign pagination_previous_page = pagination_start_page | minus:1 %}
+              <li>
+                {% if pagination_previous_page == 1 %}
+                <a href="/">
+                {% else %}
+                <a href="/page{{ pagination_previous_page }}/">
+                {% endif %}
+                &laquo;</a>
+              </li> 
+            {% endif %}
+    
+            {% for i in (pagination_start_page..pagination_end_page) %}
+              <li{% if i == paginator.page %} class="active"{% endif %}>
+                {% if i == 1 %}
+                <a href="/">
+                {% else %}
+                <a href="/page{{ i }}/">
+                {% endif %}
+                {{ i }}</a>
+              </li>
+            {% endfor %}
+    
+            {% if pagination_end_page == paginator.total_pages %}
+              <li class="disabled"><span>&raquo;</span></li> 
+            {% else %}
+              {% assign pagination_next_page = pagination_end_page | plus:1 %}
+              <li>
+                <a href="/page{{ pagination_next_page }}/">&raquo;</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-md-offset-1 ">
+    <div class="right">
+      <div class="item-list">
+        <h3 class="page-header"><a class="feature-link" href="/categories">Categories</a></h3>
+        <ol class="list-unstyled">
+        {% for cate in site.categories %}
+		<li><a href="/categories/#{{cate | first}}">{{cate | first | capitalize}} <span class="badge pull-right">{{ cate | last | size }}<span></a></li>
+        {% endfor %}
+        </ol>
+        </div>
+        <div class="item-list">
+          <h3 class="page-header"><a class="feature-link" href="/">Recent Posts</a></h3>
+          <ol class="list-unstyled">
+          {% for post in site.posts offset: 0 limit: 5 %}
+          <li><a href="{{post.url}}">{{ post.title }}</a></li>
+          {% endfor %}
+         </ol>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- content -->
