@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<!-- style -->
+{% assign block = content | split: '<!-- style -->' %}
+{{ block[1] }}
+<!-- style -->
+<!-- bannercontent -->
+{% assign block = content | split: '<!-- bannercontent -->' %}
+{{ block[1] }}
+<!-- bannercontent -->
 <!-- content -->
 <div class="row post-display">
   <div class="col-md-8 left" role="main">
@@ -17,4 +25,6 @@ layout: default
 <!-- content -->
 <!-- script -->
 <script type="text/javascript" src="/assets/js/toc.js"></script>
+{% assign block = content | split: '<!-- script -->' %}
+{{ block[1] }}
 <!-- script -->

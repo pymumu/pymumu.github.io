@@ -55,14 +55,17 @@
   <!--end navigation bar -->
   <!-- Docs page layout -->
   <!-- bannercontent -->
-  <!--
+  {% assign block = content | split: '<!-- bannercontent -->' %}
+  {% if block[1] %}
+  {% assign block_count = block[1] | number_of_words %}
+  {% if block_count > 0 %}
   <div class="bs-header bs-back-image" id="content">
     <div class="container">
-	  {% assign block = content | split: '<!-- bannercontent -->' %}
   	  {{ block[1] }}
     </div>
   </div>
-  -->
+  {% endif %}
+  {% endif %}
   <!-- bannercontent -->
   <!-- Callout for the old docs link -->
   <!-- Begin page content -->
