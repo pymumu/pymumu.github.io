@@ -2,12 +2,16 @@ name: Ruilin's blog
 url: http://pymumu.github.io
 site: pymumu.github.io
 author:
-  name: Ruilin Peng
-  email: pymumu@gmail.com
-
+    name: Ruilin Peng
+    nickname: pymumu
+    github : pymumu
+    twitter : 
+    googleplus : 105794383153869177146
+    weibo : 1434216743
+    facebook : 
 permalink: post/:year-:month-:day/:title.html
 
-paginate: 10
+paginate: 5
 paginate_path: "/page:num"
 encoding: utf-8
 highlighter: pygments

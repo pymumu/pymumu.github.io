@@ -15,9 +15,26 @@ description: "My name is Ruilin Peng. I'm a Chinese senior software engineer liv
   <h2>Elsewhere</h2>
   <p>You can find me on a variety of world wild interweb sites where my username is usually "<b><i>pymumu</i></b>".</p>
   <div style="font-size: 3.7em;">
-    <a href="https://github.com/pymumu"><i class="fa fa-fw fa-github"></i></a>
-    <a href="http://plus.google.com"><i class="fa fa-fw fa-google"></i></a>
-    <a href="http://weibo.com/u/1434216743"><i class="fa fa-fw fa-weibo"></i></a>
+	{% if site.author.github %}
+	{% capture author_github_url %}https://www.github.com/{{ site.author.github }}{% endcapture %}
+    <a href="{{ author_github_url }}"><i class="fa fa-fw fa-github"></i></a>
+	{% endif %}
+	{% if site.author.twitter %}
+	{% capture author_twitter_url %}http://www.twitter.com/{{ site.author.twitter }}{% endcapture %}
+    <a href="{{ author_twitter_url }}"><i class="fa fa-fw fa-twitter-square"></i></a>
+	{% endif %}
+	{% if site.author.googleplus %}
+	{% capture author_googleplus_url %}https://plus.google.com/{{ site.author.googleplus }}{% endcapture %}
+    <a href="{{ author_googleplus_url }}"><i class="fa fa-fw fa-google-plus-square"></i></a>
+	{% endif %}
+	{% if site.author.facebook %}
+	{% capture author_facebook_url %}http://www.facebook.com/{{ site.author.facebook }}{% endcapture %}
+	<a href="{{ author_facebook_url }}"><i class="fa fa-fw fa-facebook-square"></i></a>
+	{% endif %}
+	{% if site.author.weibo %}
+	{% capture author_weibo_url %}http://weibo.com/u/{{ site.author.weibo }}{% endcapture %}
+	<a href="{{ author_weibo_url }}"><i class="fa fa-fw fa-weibo"></i></a>
+	{% endif %}
   </div>
 </div>
 <div id="skills" class="container col-md-4">

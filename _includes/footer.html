@@ -1,14 +1,60 @@
 <footer class="bs-footer" role="contentinfo">
   <div class="container">
-Copyright © 2014 Ruilin Peng, 
-Built with Jekyll, hosted on GitHub and using Bootstrap.
-    <ul class="footer-links">
-      <li><a href="http://www.github.com">GitHub</a></li>
-      <li class="muted">&middot;</li>
-	  <li><a href="http://jekyllrb.com/">jekyllrb</a></li>
-      <li class="muted">&middot;</li>
-      <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
-      <li class="muted">&middot;</li>
-    </ul>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <ul class="nav nav-pills">
+          {% if site.author.github %}
+          <li>
+            {% capture author_github_url %}https://www.github.com/{{ site.author.github }}{% endcapture %}
+            <a href="{{ author_github_url }}">
+              <i class="fa fa-github-square fa-lg"></i> GitHub
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.twitter %}
+          <li>
+            {% capture author_twitter_url %}http://www.twitter.com/{{ site.author.twitter }}{% endcapture %}
+            <a href="{{ author_twitter_url }}">
+              <i class="fa fa-twitter-square fa-lg"></i> Twitter
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.googleplus %}
+          <li>
+            {% capture author_googleplus_url %}https://plus.google.com/{{ site.author.googleplus }}{% endcapture %}
+            <a href="{{ author_googleplus_url }}">
+              <i class="fa fa-google-plus-square fa-lg"></i> Google+
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.facebook %}
+          <li>
+            {% capture author_facebook_url %}http://www.facebook.com/{{ site.author.facebook }}{% endcapture %}
+            <a href="{{ author_facebook_url }}">
+              <i class="fa fa-facebook-square fa-lg"></i> Facebook
+            </a>
+          </li>
+          {% endif %}
+          {% if site.author.weibo %}
+          <li>
+            {% capture author_weibo_url %}http://weibo.com/u/{{ site.author.weibo }}{% endcapture %}
+            <a href="{{ author_weibo_url }}">
+              <i class="fa fa-weibo fa-lg"></i> Weibo
+            </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="/atom.xml">
+              <i class="fa fa-rss-square fa-lg"></i> Rss
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+	  Copyright © 2014 Ruilin Peng, <br/>
+	  Built with <a href="http://jekyllrb.com/">Jekyll</a>, proudly hosted on 
+	  <a href="http://www.github.com">GitHub</a> and theme from 
+	  <a href="http://getbootstrap.com/">Bootstrap</a>
+	  .<br/>
   </div>
 </footer>
