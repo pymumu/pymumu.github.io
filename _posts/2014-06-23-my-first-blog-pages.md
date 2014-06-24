@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: My first blog.
-date: 2014-06-24 23:00:00 +0800
+date: 2014-06-23 23:00:00 +0800
 categories: misc
 description: Hi, everybody, This is my first github blog page, it's my pleasure to see you all. The content contains some Markdown syntax test cases.
 tags: jekyll
