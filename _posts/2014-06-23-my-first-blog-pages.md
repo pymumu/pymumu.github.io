@@ -107,13 +107,13 @@ function fancyAlert(arg) {
 }
 ```
 
-```c
+{% highlight c linenos %}
 int main(int argc, char *argv[])
 {
 	printf("Hello, world!");
 	return 0;
 }
-```
+{% endhighlight %}
 
 # Tables
 First Header  | Second Header
