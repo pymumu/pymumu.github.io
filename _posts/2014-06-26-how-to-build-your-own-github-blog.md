@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: How to build you own github blog pages.
+title: How to build your own github blog pages.
 date: 2014-06-26 23:00:00 +0800
 categories: misc
 tags: jekyll
