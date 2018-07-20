@@ -1,13 +1,12 @@
-name: Ruilin's blog
+name: Nick's blog
 url: http://pymumu.github.io
 site: pymumu.github.io
 author:
-    name: Ruilin Peng
+    name: Nick Peng
     nickname: pymumu
     github : pymumu
     twitter : 
     googleplus : 105794383153869177146
-    weibo : 1434216743
     facebook : 
 permalink: post/:year-:month-:day/:title.html
 
